@@ -1,0 +1,13 @@
+---
+- name: Install wget
+  ansible.builtin.apt:
+    name: wget
+    update_cache: true
+
+- name: Install tmux
+  ansible.builtin.apt:
+    name: tmux
+
+- name: Install unzip
+  ansible.builtin.apt:
+    name: unzip
