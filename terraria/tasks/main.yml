@@ -3,3 +3,6 @@
   become: true
   import_tasks: install.yml
 
+- name: Get server zip file
+  become: true
+  import_tasks: install.yml

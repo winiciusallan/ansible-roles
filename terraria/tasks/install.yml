@@ -1,13 +1,18 @@
 ---
-- name: Install wget
+- name: Install wget, tmux and unzip
   ansible.builtin.apt:
-    name: wget
+    pkg:
+    - wget
+    - tmux
+    - unzip
+    state: present
     update_cache: true
 
-- name: Install tmux
-  ansible.builtin.apt:
-    name: tmux
+- name: Get server zip file
+  become: true
+  ansible.builtin.get_url:
+    url: "{{ server_url }}"
+    dest: /srv/terraria
+    owner: terraria
+    group: terraria
 
-- name: Install unzip
-  ansible.builtin.apt:
-    name: unzip
