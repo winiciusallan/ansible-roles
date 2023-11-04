@@ -1,8 +1,9 @@
 ---
+- name: Setup before install
+  become: true
+  import_tasks: setup.yml
+
 - name: Install packages
   become: true
   import_tasks: install.yml
 
-- name: Get server zip file
-  become: true
-  import_tasks: install.yml

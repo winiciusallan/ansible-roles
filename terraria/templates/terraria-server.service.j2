@@ -1,0 +1,12 @@
+[Unit]
+Description=Terraria server service
+After=network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+User=Terraria
+ExecStart=/usr/bin/tmux new -d -s "TerrariaServer" /srv/terraria/TerrariaServer.bin.x86_64
+
+[Install]
+WantedBy=multi-user.target
