@@ -1,2 +1,3 @@
 [computes]
+10.5.10.54 ansible_user=ubuntu
 # Put your machines here

@@ -1,0 +1,9 @@
+---
+- name: Daemon Reload
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: Enable server
+  ansible.builtin.systemd:
+    name: terraria-server.service
+    enabled: true

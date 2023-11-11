@@ -1,7 +1,7 @@
 ---
 # Create user terraria, appending him to sudo group.
 - name: Create terraria user
-  ansible.builtin.users:
+  ansible.builtin.user:
     name: terraria
     shell: /bin/bash
     home: /srv/terraria

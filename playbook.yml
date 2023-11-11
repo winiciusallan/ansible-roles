@@ -1,5 +1,6 @@
 ---
-- hosts: compute
+- name: Deploy terraria server
+  hosts: computes
+  become: true
   roles:
-    - monitoring
     - terraria
