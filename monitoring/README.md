@@ -1,12 +1,12 @@
-Role Name
+Monitoring
 =========
 
-A brief description of the role goes here.
+This role makes a fresh install of a monitoring stack with prometheus, grafana and some exporters. The services are deployed on docker containers. 
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+You will need Ansible client on your machine and SSH client also installed.
 
 Role Variables
 --------------
