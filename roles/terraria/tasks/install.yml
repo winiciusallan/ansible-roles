@@ -8,17 +8,22 @@
     state: present
     update_cache: true
 
+- name: Install server zip
+  ansible.builtin.get_url:
+    url: "{{ server_url }}"
+    dest: "/srv/terraria/{{ server_file }}"
+
 - name: Unzip server file
   become: true
   ansible.builtin.unarchive:
-    src: "{{ server_url }}"
-    dest: /srv/terraria/"{{ server_file }}"
+    src: "/srv/terraria/{{ server_file }}"
+    dest: "/srv/terraria/"
     remote_src: yes
 
 - name: Change file permissions
   become: true
   ansible.builtin.file:
-    path: /srv/terraria/"{{ server_file }}"
+    path: /srv/terraria/TerrariaServer.bin.x86
     owner: terraria
     group: terraria
     mode: '0744'
